@@ -3,7 +3,6 @@ import { FunctionComponent, useRef, useState } from 'react'
 
 import classNames from 'classnames'
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon'
-import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { EmbeddedTweet, TweetSkeleton } from 'react-tweet'
 import { Tweet } from 'react-tweet/api'
@@ -69,7 +68,7 @@ const carouselVideos = [
     },
 ]
 
-const Home: FunctionComponent<HomeProps> = ({ tweets }) => {
+const Home: FunctionComponent<HomeProps> = () => {
     const windowWidth = useWindowWidth()
     const isMobile = windowWidth < breakpoints.lg
 
@@ -78,6 +77,8 @@ const Home: FunctionComponent<HomeProps> = ({ tweets }) => {
 
     const isInnovationSectionRefInView = useInView(innovationSectionRef, isMobile ? 0.2 : 0.5)
     const isLightRefInView = useInView(lightRef, isMobile ? 1 : 0.8)
+
+    const tweets = HOME_PAGE_TWEET_IDS.map(tweetId => Tweets[tweetId] as any)
 
     return (
         <Layout
@@ -472,17 +473,6 @@ const AvailabilityIcon: React.FC<AvailabilityIconProps> = ({
             <img src={src} alt={alt} />
         </Link>
     )
-}
-
-export const getStaticProps: GetStaticProps<HomeProps> = () => {
-    try {
-        const tweets = HOME_PAGE_TWEET_IDS.map(tweetId => Tweets[tweetId] as any)
-
-        return { props: { tweets } }
-    } catch (error) {
-        console.error('Error fetching tweets:', error)
-        return { props: { tweets: [] } }
-    }
 }
 
 export default Home
