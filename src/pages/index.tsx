@@ -4,7 +4,7 @@ import { FunctionComponent, useRef, useState } from 'react'
 import classNames from 'classnames'
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon'
 import Link from 'next/link'
-import { EmbeddedTweet, TweetSkeleton } from 'react-tweet'
+// import { EmbeddedTweet, TweetSkeleton } from 'react-tweet'
 import { Tweet } from 'react-tweet/api'
 
 import {
@@ -19,12 +19,12 @@ import {
 } from '../components'
 import { breakpoints } from '../data/breakpoints'
 // eslint-disable-next-line import/extensions
-import Tweets from '../data/tweets.json'
+// import Tweets from '../data/tweets.json'
 import { EventName, getEventLogger } from '../hooks/eventLogger'
 import { useInView } from '../hooks/useInView'
 import { useWindowWidth } from '../hooks/windowWidth'
 
-import { HOME_PAGE_TWEET_IDS } from './constants'
+// import { HOME_PAGE_TWEET_IDS } from './constants'
 
 interface HomeProps {
     tweets: (Tweet | undefined)[]
@@ -77,7 +77,7 @@ const Home: FunctionComponent<HomeProps> = () => {
 
     const isInnovationSectionRefInView = useInView(innovationSectionRef, isMobile ? 0.2 : 0.5)
     const isLightRefInView = useInView(lightRef, isMobile ? 1 : 0.8)
-    const tweets = HOME_PAGE_TWEET_IDS.map(tweetId => Tweets[tweetId] as any)
+    // const tweets = HOME_PAGE_TWEET_IDS.map(tweetId => Tweets[tweetId] as any)
 
     return (
         <Layout
@@ -134,7 +134,7 @@ const Home: FunctionComponent<HomeProps> = () => {
                 <Heading size="h3" className="mb-16 text-center !text-4xl font-semibold text-white md:mb-16">
                     See what devs are saying about Cody (beta)
                 </Heading>
-                <div className="relative -mt-[25px] grid w-full grid-cols-1 gap-x-6 md:grid-cols-2">
+                {/* <div className="relative -mt-[25px] grid w-full grid-cols-1 gap-x-6 md:grid-cols-2">
                     <div className="relative grid auto-rows-min grid-cols-1">
                         <div className="mb-1 -mt-[30px] flex justify-center md:mt-0 xl:-mr-[80px]">
                             {tweets[0] ? <EmbeddedTweet key={tweets[0].id_str} tweet={tweets[0]} /> : <TweetSkeleton />}
@@ -152,7 +152,7 @@ const Home: FunctionComponent<HomeProps> = () => {
                             {tweets[3] ? <EmbeddedTweet key={tweets[3].id_str} tweet={tweets[3]} /> : <TweetSkeleton />}
                         </div>
                     </div>
-                </div>
+                </div> */}
             </ContentSection>
 
             <CallToActionWithCody className="-mt-[10px] md:mt-32" />
