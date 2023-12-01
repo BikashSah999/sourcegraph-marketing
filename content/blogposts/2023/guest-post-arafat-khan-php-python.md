@@ -77,104 +77,10 @@ To do the real building, I started out with the root of the entire codebase, whi
 You can see how easy it is to select some Python code and ask Cody to convert it. This gives us a good starting point of the outline of the class that we are looking for.
 
 ```php
-class AuthCtx {
-
-  // Properties
-  private $_baseUrl;
-  private $_printerEmail; 
-  private $_clientId;
-  private $_clientSecret;
-
-  private $_expiresAt;
-  private $_accessToken = '';
-  private $_refreshToken = '';
-  private $_subjectId = '';
-
-  // Constructor
-  public function __construct($baseUrl, $printerEmail, $clientId, $clientSecret) {
-
-    // Initialize properties
-    $this->_baseUrl = $baseUrl;
-    $this->_printerEmail = $printerEmail;
-    $this->_clientId = $clientId;
-    $this->_clientSecret = $clientSecret;
-
-    // Call auth method
-    $this->_auth();
-
-  }
-
-  // Authenticate or re-authenticate
-  private function _auth() {
-
-    // Check token expiration
-    if ($this->_expiresAt > time()) {
-      return;
-    }  
-
-    // API endpoint
-    $method = 'POST';
-    $path = '/api/1/printing/oauth2/auth/token?subject=printer';
-
-    // Headers
-    $headers = array(
-      'Content-Type' => 'application/x-www-form-urlencoded'
-    );
-
-    // Authentication
-    $auth = array($this->_clientId, $this->_clientSecret);
-
-    // Request data
-    if ($this->_accessToken == '') {
-      $data = array(
-         'grant_type' => 'password',
-         'username' => $this->_printerEmail,
-         'password' => ''
-      );
-    } else {
-      $data = array(
-        'grant_type' => 'refresh_token',
-        'refresh_token' => $this->_refreshToken
-      );
-    }
-
-    // Make API request
-    try {
-      $body = $this->send($method, $path, $data, $headers, $auth);
-    } catch (Exception $e) {
-      throw new Exception('Authentication error: ' . $e->getMessage());
-    }
-
-    // Handle errors
-    if (isset($body['error'])) {
-      throw new Exception('Authentication error: ' . $body['error']);
-    }
-
-    // First time, get refresh token
-    if ($this->_accessToken == '') {
-      $this->_refreshToken = $body['refresh_token'];
-    }
-
-    // Update tokens
-    $this->_expiresAt = time() + $body['expires_in'];
-    $this->_accessToken = $body['access_token'];
-    $this->_subjectId = $body['subject_id'];
-
-  }
-
-  // Make API request
-  public function send($method, $path, $data, $headers, $auth) {
-
-    // Re-authenticate if needed
-    if (!$auth) {
-      $this->_auth(); 
-    }
-
-    // Make HTTP request and handle response
-
-  }
-
-}
+<?php
+  // This is a simple PHP script
+  echo "Hello, World!";
+?>
 ```
 
 This is a very decent scaffolding for the entire Auth class we have the private/public variables, most of the auth method already implemented, and the outline of the send method. This is a great starting point, I already learned so much about PHP syntax just from this, and now I can build things on top of it. Brick by brick, by selecting segments of my Python code, I can understand them and then create them in PHP, too. I kept doing the iterative work of selecting different parts of my Python code and asking more questions on it to piece it all together to make my PHP code.
