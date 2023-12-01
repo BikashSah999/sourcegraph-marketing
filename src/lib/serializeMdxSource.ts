@@ -3,12 +3,12 @@ import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
-import gfm from 'remark-gfm'
+// import gfm from 'remark-gfm'
 
 export const serializeMdxSource = async (markdownContent: string): Promise<MDXRemoteSerializeResult> => {
     const serializeResult = await serialize(markdownContent, {
         mdxOptions: {
-            remarkPlugins: [gfm],
+            // remarkPlugins: [gfm],
             rehypePlugins: [
                 // Adds syntax highlighting
                 rehypePrism,
