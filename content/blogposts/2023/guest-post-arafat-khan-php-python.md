@@ -79,7 +79,7 @@ You can see how easy it is to select some Python code and ask Cody to convert it
 ```php
 <?php
   // This is a simple PHP script
-  echo "Hello, World!";
+  echo "Hello, Worlddddd!";
 ?>
 ```
 
