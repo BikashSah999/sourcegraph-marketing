@@ -36,15 +36,4 @@ const nextConfig = {
   },
 }
 
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-})
-
-// Merge MDX config with Next.js config
-export default withMDX(nextConfig)
-
 module.exports = withBundleAnalyzer(nextConfig)
