@@ -45,9 +45,19 @@ function greet(name) {
 
 ```php
 <?php
-  // This is a simple PHP script
-  echo "Hello, World!";
+  echo('Hello world');
 ?>
+```
+
+```python
+  // This is a simple PHP script
+  print("Hello, World!")
+  # Input two numbers from the user
+  num1 = float(input("Enter the first number: "))
+  num2 = float(input("Enter the second number: "))
+
+  # Add the two numbers
+  sum_result = num1 + num2
 ```
 
 **Doc output:**
