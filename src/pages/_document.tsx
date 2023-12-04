@@ -41,6 +41,7 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap"
                         rel="stylesheet"
                     />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-dark.min.css" />
 
                     {/* Google structured data. */}
                     <Script
