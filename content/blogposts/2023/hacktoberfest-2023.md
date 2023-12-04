@@ -43,6 +43,13 @@ function greet(name) {
 }
 ```
 
+```php
+<?php
+  // This is a simple PHP script
+  echo "Hello, World!";
+?>
+```
+
 **Doc output:**
 
 ![Doc output](https://storage.googleapis.com/sourcegraph-assets/blog/hacktoberfest-2023-blog-image2.png)
