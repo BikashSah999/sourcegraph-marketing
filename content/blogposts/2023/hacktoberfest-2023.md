@@ -43,6 +43,23 @@ function greet(name) {
 }
 ```
 
+```php
+<?php
+  echo('Hello world');
+?>
+```
+
+```python
+  // This is a simple PHP script
+  print("Hello, World!")
+  # Input two numbers from the user
+  num1 = float(input("Enter the first number: "))
+  num2 = float(input("Enter the second number: "))
+
+  # Add the two numbers
+  sum_result = num1 + num2
+```
+
 **Doc output:**
 
 ![Doc output](https://storage.googleapis.com/sourcegraph-assets/blog/hacktoberfest-2023-blog-image2.png)
