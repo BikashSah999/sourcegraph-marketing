@@ -1,7 +1,8 @@
-import rehypePrism from '@mapbox/rehype-prism'
+// import rehypePrism from '@mapbox/rehype-prism'
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import gfm from 'remark-gfm'
 
