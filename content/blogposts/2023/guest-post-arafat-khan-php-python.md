@@ -76,7 +76,7 @@ To do the real building, I started out with the root of the entire codebase, whi
 
 You can see how easy it is to select some Python code and ask Cody to convert it. This gives us a good starting point of the outline of the class that we are looking for.
 
-```php
+```js
 <?php
   // This is a simple PHP script
   echo "Hello, Worlddddd!";
